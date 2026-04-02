@@ -3,16 +3,16 @@ class ClientCollection:
         self.clients = clients 
     
     def get_client_by_id(self, client_id):
-        for cl in self.clients:
-            if cl.client_id == client_id:
-                return cl 
+        for c in self.clients:
+            if c.client_id == client_id:
+                return c 
         return None 
     
     def clients_by_country(self, country):
         result = []
-        for cl in self.clients:
-            if cl.country == country:
-                result.append(cl)
+        for c in self.clients:
+            if c.country == country:
+                result.append(c)
         return result 
     
     
