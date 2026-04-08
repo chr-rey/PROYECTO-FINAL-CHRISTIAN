@@ -80,4 +80,15 @@ def generate_report():
     sales_df["month"] = sales_df["date"].dt.to_period("M").astype(str)
     monthly_sales = sales_df.groupby("month")["amount"].sum().round(2).to_dict()
     
-    
+    return {
+        "summary": {
+            "total_clients": total_clients,
+            "total_sales": total_sales,
+            "total_revenue": total_revenue
+        },
+        "clients": clients_report,
+        "top_client_by_country": top_client_by_country,
+        "sales_by_category": sales_by_category,
+        "high_spending_clients": high_spending_clients,
+        "monthly_sales": monthly_sales
+    }
